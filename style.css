@@ -2,16 +2,27 @@ body {
   font-family: Arial;
   text-align: center;
   padding: 20px;
+  background: #f4f6f8;
 }
 
 textarea {
-  width: 90%;
-  height: 120px;
-  margin: 10px;
+  width: 95%;
+  height: 140px;
+  margin: 10px 0;
+  padding: 10px;
 }
 
-button {
+.buttons button {
   margin: 5px;
-  padding: 10px 15px;
+  padding: 10px 14px;
+  border: none;
+  background: #007bff;
+  color: white;
   cursor: pointer;
+  border-radius: 4px;
 }
+
+.buttons button:hover {
+  background: #0056b3;
+}
+
