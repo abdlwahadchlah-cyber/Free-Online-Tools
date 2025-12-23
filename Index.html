@@ -12,12 +12,19 @@
 
 <textarea id="text" placeholder="Write text here..."></textarea>
 
-<button onclick="countWords()">Count Words</button>
-<button onclick="toUpper()">UPPERCASE</button>
-<button onclick="toLower()">lowercase</button>
+<div class="buttons">
+  <button onclick="countWords()">Word Count</button>
+  <button onclick="countChars()">Character Count</button>
+  <button onclick="reverseText()">Reverse Text</button>
+  <button onclick="removeSpaces()">Remove Extra Spaces</button>
+  <button onclick="toUpper()">UPPERCASE</button>
+  <button onclick="toLower()">lowercase</button>
+  <button onclick="generatePassword()">Generate Password</button>
+</div>
 
 <p id="result"></p>
 
 <script src="script.js"></script>
 </body>
 </html>
+
