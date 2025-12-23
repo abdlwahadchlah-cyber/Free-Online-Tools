@@ -1,41 +1,49 @@
-function countWords() {
-  let text = document.getElementById("text").value.trim();
-  let words = text === "" ? 0 : text.split(/\s+/).length;
-  document.getElementById("result").innerText = "Words: " + words;
-}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-function countChars() {
-  let text = document.getElementById("text").value;
-  document.getElementById("result").innerText = "Characters: " + text.length;
-}
+  const textInput = document.getElementById("textInput");
+  const result = document.getElementById("result");
 
-function reverseText() {
-  let text = document.getElementById("text").value;
-  document.getElementById("text").value = text.split("").reverse().join("");
-}
-
-function removeSpaces() {
-  let text = document.getElementById("text").value;
-  document.getElementById("text").value = text.replace(/\s+/g, " ").trim();
-}
-
-function toUpper() {
-  let t = document.getElementById("text");
-  t.value = t.value.toUpperCase();
-}
-
-function toLower() {
-  let t = document.getElementById("text");
-  t.value = t.value.toLowerCase();
-}
-
-function generatePassword() {
-  let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
-  let pass = "";
-  for (let i = 0; i < 12; i++) {
-    pass += chars.charAt(Math.floor(Math.random() * chars.length));
+  if (!textInput || !result) {
+    alert("JS error: elements not found");
+    return;
   }
-  document.getElementById("text").value = pass;
-  document.getElementById("result").innerText = "Password Generated";
-}
+
+  window.countWords = function () {
+    const words = textInput.value.trim().split(/\s+/).filter(Boolean);
+    result.innerText = "Words: " + words.length;
+  };
+
+  window.countChars = function () {
+    result.innerText = "Characters: " + textInput.value.length;
+  };
+
+  window.reverseText = function () {
+    result.innerText = textInput.value.split("").reverse().join("");
+  };
+
+  window.removeSpaces = function () {
+    result.innerText = textInput.value.replace(/\s+/g, " ").trim();
+  };
+
+  window.toUpper = function () {
+    result.innerText = textInput.value.toUpperCase();
+  };
+
+  window.toLower = function () {
+    result.innerText = textInput.value.toLowerCase();
+  };
+
+  window.generatePassword = function () {
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+    let password = "";
+    for (let i = 0; i < 12; i++) {
+      password += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    result.innerText = "Generated Password: " + password;
+  };
+
+});
+</script>
+
 
